@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Магазины</title>
+</head>
+<body>
+<h1>Список магазинов</h1>
+
+<form action="/add_store" method="post">
+   <input type="text" name="class" placeholder="Класс магазина" required>
+   <input type="text" name="number" placeholder="Номер магазина" required>
+   <button type="submit">Добавить магазин</button>
+</form>
+
+<ul>
+{% for store in stores %}
+<li>{{ store.class_name }} - {{ store.number }}</li>
+{% endfor %}
+</ul>
+
+<a href="/">На главную</a>
+<a href="/departments">Отделы</a>
+<a href="/products">Товары</a>
+</body>
+</html>
+
